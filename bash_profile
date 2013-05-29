@@ -23,5 +23,7 @@ if [ "x$YROOT_NAME" != "x" ]; then
   PS1="$PS1@"
 fi
 PS1="$PS1\[\e[34;1m\]\h\[\e[0m\]"
-PS1="$PS1]"
-PS1="$PS1 \w \\$ "
+PS1="$PS1 \w]"
+PS1="$PS1\\$ "
+
+alias yr="yroot --local-home"
