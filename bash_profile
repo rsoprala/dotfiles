@@ -27,5 +27,6 @@ PS1="$PS1 \w]"
 PS1="$PS1\\$ "
 
 alias yr="yroot --local-home"
-alias api="yroot opsdb_api"
-alias ui="yroot opsdb_ui"
+alias api="yr opsdb_api"
+alias ui="yr opsdb_ui"
+alias mysql="yr opsdb_mysql"
