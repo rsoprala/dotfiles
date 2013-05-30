@@ -29,4 +29,7 @@ PS1="$PS1\\$ "
 alias yr="yroot --local-home"
 alias api="yr opsdb_api"
 alias ui="yr opsdb_ui"
-alias mysql="yr opsdb_mysql"
+alias sattach="grabssh; screen -d -R"
+alias fixssh="source $HOME/bin/fixssh"
+
+
