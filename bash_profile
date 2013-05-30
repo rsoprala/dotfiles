@@ -8,10 +8,23 @@ fi
 # User specific environment and startup programs
 
 set -o vi
+export EDITOR=vim
 
 PATH=$PATH:$HOME/bin
 
 export PATH
+
+alias less='less -R'                          # raw control characters
+alias grep='grep --color'                     # show differences in colour
+alias egrep='egrep --color=auto'              # show differences in colour
+alias fgrep='fgrep --color=auto'              # show differences in colour
+alias ls='ls -hF --color=tty'                 # classify files in colour
+
+function parse_git_branch {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)\r/ \[\1\]/'
+}
+
+#export PS1="\$(parse_git_branch) \[\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\]\n\$ "
 
 # http://twiki.corp.yahoo.com/view/Devel/Yroot
 PS1="["

@@ -1,0 +1,15 @@
+#!/bin/sh
+
+if git diff --cached -- *.{cpp,h} | grep -qP '\+.*\t'; then 
+    git diff --cached -- *.{cpp,h} | grep -P '\+.*\t' | sed 's/\t/ TAB/g'
+    echo "no tabs"
+    exit 1
+fi
+
+if git diff --cached -- *.{cpp,h,mxml,as} | grep -P '\+.*XXX'; then
+    echo "forgot something?"
+    exit 1
+fi
+
+exit 
+

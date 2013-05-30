@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/titan/prototype'
+let g:netrw_dirhist_2='/home/titan/prototype/imgs'
+let g:netrw_dirhist_3='/home/titan/prototype/assets'
+let g:netrw_dirhist_4='/home/titan/prototype/assets/js'
+let g:netrw_dirhist_5='/home/titan/prototype'
