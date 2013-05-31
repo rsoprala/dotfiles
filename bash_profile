@@ -37,12 +37,15 @@ if [ "x$YROOT_NAME" != "x" ]; then
 fi
 PS1="$PS1\[\e[34;1m\]\h\[\e[0m\]"
 PS1="$PS1 \w]"
-PS1="$PS1\\$ "
+PS1="$PS1\\n\\$ "
 
 alias yr="yroot --local-home"
 alias api="yr opsdb_api"
 alias ui="yr opsdb_ui"
-alias sattach="grabssh; screen -d -R"
+alias sattach="grabssh; tmux attach-session"
+alias screen="echo u wot"
 alias fixssh="source $HOME/bin/fixssh"
+alias src="cd ~/Git/opsdb"
 
-
+# default ot dev yroot
+if [ -x /home/y/bin/yroot -a "x$YROOT_NAME" == "x" ]; then yr dev; fi
