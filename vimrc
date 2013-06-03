@@ -42,4 +42,4 @@ set hls
 let MRU_Exclude_Files = '^/tmp/.*'
 let MRU_Max_Entries = 3000
 
-set statusline=%F[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
+set statusline=%{fugitive#statusline()}\ %F[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P 

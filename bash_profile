@@ -46,6 +46,8 @@ alias sattach="grabssh; tmux attach-session"
 alias screen="echo u wot"
 alias fixssh="source $HOME/bin/fixssh"
 alias src="cd ~/Git/opsdb"
+alias grep="grep --color=always"
+alias less="less -r"
 
 # default ot dev yroot
 # if [ -x /home/y/bin/yroot -a "x$YROOT_NAME" == "x" ]; then yr dev; fi
