@@ -48,4 +48,5 @@ alias fixssh="source $HOME/bin/fixssh"
 alias src="cd ~/Git/opsdb"
 
 # default ot dev yroot
-if [ -x /home/y/bin/yroot -a "x$YROOT_NAME" == "x" ]; then yr dev; fi
+# if [ -x /home/y/bin/yroot -a "x$YROOT_NAME" == "x" ]; then yr dev; fi
+
