@@ -32,7 +32,8 @@ nmap k gk
 noremap <C-N> :cnext<CR>
 noremap <C-P> :cprev<CR>
 " I think enter is being interpreted as C-M and randomly killing session
-noremap QQ :qa<CR>
+" Don't care about ex mode
+noremap Q :qa<CR>
 
 set laststatus=2
 set hls
