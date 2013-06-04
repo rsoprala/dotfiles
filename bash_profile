@@ -18,7 +18,9 @@ alias less='less -R'                          # raw control characters
 alias grep='grep --color'                     # show differences in colour
 alias egrep='egrep --color=auto'              # show differences in colour
 alias fgrep='fgrep --color=auto'              # show differences in colour
-alias ls='ls -hF --color=tty'                 # classify files in colour
+if [ `uname` != "Darwin" ]; then
+    alias ls='ls -hF --color=tty'                 # classify files in colour
+fi
 
 function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)\r/ \[\1\]/'
