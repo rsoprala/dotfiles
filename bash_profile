@@ -47,10 +47,15 @@ alias ui="yr opsdb_ui"
 alias sattach="grabssh; tmux attach-session"
 alias screen="echo u wot"
 alias fixssh="source $HOME/bin/fixssh"
-alias src="cd ~/Git/opsdb"
+if [ -d ~/Git/opsdb ]; then
+    alias src="cd ~/Git/opsdb"
+elif [ -d ~/Git/install-automation ]; then
+    alias src="cd ~/Git/install-automation"
+fi
 alias grep="grep --color=always"
 alias less="less -r"
 
 # default ot dev yroot
 # if [ -x /home/y/bin/yroot -a "x$YROOT_NAME" == "x" ]; then yr dev; fi
 
+src
