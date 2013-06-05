@@ -49,8 +49,10 @@ alias screen="echo u wot"
 alias fixssh="source $HOME/bin/fixssh"
 if [ -d ~/Git/opsdb ]; then
     alias src="cd ~/Git/opsdb"
+    src
 elif [ -d ~/Git/install-automation ]; then
     alias src="cd ~/Git/install-automation"
+    src
 fi
 alias grep="grep --color=always"
 alias less="less -r"
@@ -58,4 +60,3 @@ alias less="less -r"
 # default ot dev yroot
 # if [ -x /home/y/bin/yroot -a "x$YROOT_NAME" == "x" ]; then yr dev; fi
 
-src
