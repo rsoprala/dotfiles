@@ -49,13 +49,17 @@ alias screen="echo u wot"
 alias fixssh="source $HOME/bin/fixssh"
 if [ -d ~/Git/opsdb ]; then
     alias src="cd ~/Git/opsdb"
-    src
+    cd ~/Git/opsdb
 elif [ -d ~/Git/install-automation ]; then
     alias src="cd ~/Git/install-automation"
-    src
+    cd ~/Git/install-automation
 fi
 alias grep="grep --color=always"
 alias less="less -r"
+
+function vimf {
+    vim `find . -iname $1* | head -n 1`
+}
 
 # default ot dev yroot
 # if [ -x /home/y/bin/yroot -a "x$YROOT_NAME" == "x" ]; then yr dev; fi

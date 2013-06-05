@@ -45,5 +45,7 @@ let MRU_Max_Entries = 3000
 
 set statusline=%{fugitive#statusline()}\ %F[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P 
 
-noremap FF :FufCoverageFile <CR>
+noremap HH :chdir ~/Git/<CR>
+noremap FF :FufCoverageFile<CR>
+"call fuf#setOneTimeVariables(['g:fuf_coveragefile_globPatterns', ['~/Git/**/.*', '~/Git/**/*']])
 "noremap FM :FufMruFile<CR>
