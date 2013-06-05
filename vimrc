@@ -16,7 +16,7 @@ set smartcase
 
 if &diff
 else
-    set autochdir " nice for Ex:
+"    set autochdir " nice for Ex:
 endif
 set scrolloff=15
 
@@ -44,3 +44,6 @@ let MRU_Exclude_Files = '^/tmp/.*'
 let MRU_Max_Entries = 3000
 
 set statusline=%{fugitive#statusline()}\ %F[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P 
+
+noremap FF :FufCoverageFile <CR>
+"noremap FM :FufMruFile<CR>
