@@ -86,3 +86,5 @@ PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 function tcpdump_host {
   sudo tcpdump -i eth0 -A host $* and port 80
 }
+
+source ~/dotfiles/git-completion.bash
