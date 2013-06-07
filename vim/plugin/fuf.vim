@@ -5,6 +5,9 @@
 "=============================================================================
 " LOAD GUARD {{{1
 
+if v:version < 702
+    finish
+endif
 try
   if !l9#guardScriptLoading(expand('<sfile>:p'), 702, 101, [])
     finish

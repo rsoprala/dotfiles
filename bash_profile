@@ -58,9 +58,31 @@ alias grep="grep --color=always"
 alias less="less -r"
 
 function vimf {
-    vim `find . -iname $1* | head -n 1`
+    vim `find . -iname $1* -type f | head -n 1`
 }
 
 # default ot dev yroot
 # if [ -x /home/y/bin/yroot -a "x$YROOT_NAME" == "x" ]; then yr dev; fi
 
+# Append to ~/.bash_history instead of overwriting it -- this stops terminals
+# from overwriting one another's histories.
+shopt -s histappend
+# Only load the last 1000 lines from your ~/.bash_history -- if you need an
+# older entry, just grep that file.
+HISTSIZE=1000
+# Don't truncate ~/.bash_history -- keep all your history, ever.
+unset HISTFILESIZE
+# Add a timestamp to each history entry.
+HISTTIMEFORMAT="%Y/%m/%d %H:%M:%S  "
+# Don't remember trivial 1- and 2-letter commands.
+HISTIGNORE=?:??
+# What it says.
+HISTCONTROL=ignoredups
+# Save each history entry immediately (protects against terminal crashes/
+# disconnections, and interleaves commands from multiple terminals in correct
+# chronological order).
+PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+
+function tcpdump_host {
+  sudo tcpdump -i eth0 -A host $* and port 80
+}

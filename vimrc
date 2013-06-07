@@ -1,9 +1,9 @@
 set nocompatible
 set tags=tags;/
 set expandtab
-set shiftwidth=4 " tab width
-set softtabstop=4
-set tabstop=4 " tab wdith expansion
+set shiftwidth=2 " tab width
+set softtabstop=2
+set tabstop=2 " tab wdith expansion
 set smarttab
 set autoindent
 set cindent
