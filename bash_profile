@@ -23,7 +23,7 @@ if [ `uname` != "Darwin" ]; then
 fi
 
 function parse_git_branch {
-  if [ -e `which git` ]; then
+  if [ -e `which git 2> /dev/null` ]; then
     git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\[\1\] /'
   else
     echo ""
