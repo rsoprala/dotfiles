@@ -23,13 +23,17 @@ if [ `uname` != "Darwin" ]; then
 fi
 
 function parse_git_branch {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)\r/ \[\1\]/'
+  if [ -e `which git` ]; then
+    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\[\1\] /'
+  else
+    echo ""
+  fi
 }
 
 #export PS1="\$(parse_git_branch) \[\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\]\n\$ "
 
 # http://twiki.corp.yahoo.com/view/Devel/Yroot
-PS1="["
+PS1="\e[0;31m\$(parse_git_branch)\e[m["
 PS1="$PS1\[\e[36m\]\u\[\e[0m\]"
 PS1="$PS1@"
 if [ "x$YROOT_NAME" != "x" ]; then
@@ -88,3 +92,4 @@ function tcpdump_host {
 }
 
 source ~/dotfiles/git-completion.bash
+export NODE_PATH=/home/mhavener/local/lib/jsctags/:$NODE_PATH

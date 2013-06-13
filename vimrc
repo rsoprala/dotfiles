@@ -5,9 +5,7 @@ set shiftwidth=2 " tab width
 set softtabstop=2
 set tabstop=2 " tab wdith expansion
 set smarttab
-set autoindent
 set cindent
-set smartindent
 set nobackup
 set noswapfile
 set incsearch
@@ -47,5 +45,6 @@ set statusline=%{fugitive#statusline()}\ %F[%{strlen(&fenc)?&fenc:'none'},%{&ff}
 
 noremap HH :chdir ~/Git/<CR>
 noremap FF :FufCoverageFile<CR>
-"call fuf#setOneTimeVariables(['g:fuf_coveragefile_globPatterns', ['~/Git/**/.*', '~/Git/**/*']])
-"noremap FM :FufMruFile<CR>
+
+set makeprg=php\ -l\ %
+set errorformat=%m\ in\ %f\ on\ line\ %l
