@@ -48,3 +48,9 @@ noremap FF :FufCoverageFile<CR>
 
 set makeprg=php\ -l\ %
 set errorformat=%m\ in\ %f\ on\ line\ %l
+
+au BufNewFile,BufRead *.md set ft=md
+
+" newlines at end of file getting annoying
+set binary
+set noeol

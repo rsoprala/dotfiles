@@ -62,7 +62,7 @@ alias grep="grep --color=always"
 alias less="less -r"
 
 function vimf {
-    vim `find . -iname $1* -type f | head -n 1`
+    vim `find . -iname $1* -type f | tr '\r' ' '`
 }
 
 # default ot dev yroot
