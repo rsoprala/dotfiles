@@ -53,3 +53,6 @@ au BufNewFile,BufRead *.md set ft=md
 " newlines at end of file getting annoying
 set binary
 set noeol
+
+" w!!: Writes using sudo
+cnoremap w!! w !sudo tee % >/dev/null
