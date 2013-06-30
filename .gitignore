@@ -1,2 +1,3 @@
 bin/fixssh
-vim/.netrwhist
+/vim/.netrwhist
+/vim/bundle
