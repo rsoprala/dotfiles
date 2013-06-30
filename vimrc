@@ -44,7 +44,6 @@ let MRU_Max_Entries = 3000
 set statusline=%{fugitive#statusline()}\ %F[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P 
 
 noremap HH :chdir ~/Git/<CR>
-noremap FF :FufCoverageFile<CR>
 
 set makeprg=php\ -l\ %
 set errorformat=%m\ in\ %f\ on\ line\ %l
