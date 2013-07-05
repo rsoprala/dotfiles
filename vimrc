@@ -25,17 +25,16 @@ NeoBundle 'Shougo/unite-session'
 NeoBundle 'tpope/vim-fugitive'
 
 set tags=tags;/
-set expandtab
-set shiftwidth=2 " tab width
-set softtabstop=2
-set tabstop=2 " tab wdith expansion
-set smarttab
+set shiftwidth=4 " tab width
+set softtabstop=4
+set tabstop=4 " tab wdith expansion
 set cindent
 set nobackup
 set noswapfile
 set incsearch
 set ignorecase
 set smartcase
+set expandtab
 
 let mapleader = ","
 let g:mapleader = ","
@@ -78,6 +77,12 @@ set noeol
 " w!!: Writes using sudo
 cnoremap w!! w !sudo tee % >/dev/null
 
-nnoremap <silent> <Leader>f :<C-u>Unite -start-insert -buffer-name=files file_rec/async file/new<CR>
+nnoremap <silent> <Leader>f :<C-u>Unite -start-insert -buffer-name=files file_rec/async:!<CR>
+nnoremap <silent> <Leader>F :<C-u>Unite -start-insert -buffer-name=files file_rec/async:~/Git/<CR>
 nnoremap <silent> <Leader>m :<C-u>Unite -start-insert -buffer-name=mru file_mru<CR>
 nnoremap <silent> ,h :chdir ~/Git/<CR>
+
+set expandtab
+
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
