@@ -51,13 +51,7 @@ alias ui="yr opsdb_ui"
 alias sattach="grabssh; tmux attach-session"
 alias screen="echo u wot"
 alias fixssh="source $HOME/bin/fixssh"
-if [ -d ~/Git/opsdb ]; then
-    alias src="cd ~/Git/opsdb"
-    cd ~/Git/opsdb
-elif [ -d ~/Git/install-automation ]; then
-    alias src="cd ~/Git/install-automation"
-    cd ~/Git/install-automation
-fi
+alias src="cd $(cat ~/.project)"
 alias grep="grep --color=always"
 alias less="less -r"
 
@@ -93,3 +87,5 @@ function tcpdump_host {
 
 source ~/dotfiles/git-completion.bash
 export NODE_PATH=/home/mhavener/local/lib/jsctags/:$NODE_PATH
+
+cd $(cat ~/.project)
