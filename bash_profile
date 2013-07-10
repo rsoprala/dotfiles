@@ -88,4 +88,6 @@ function tcpdump_host {
 source ~/dotfiles/git-completion.bash
 export NODE_PATH=/home/mhavener/local/lib/jsctags/:$NODE_PATH
 
-cd $(cat ~/.project)
+if [ -d $(cat ~/.project) ]; then
+    cd $(cat ~/.project)
+fi
