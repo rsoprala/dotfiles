@@ -79,9 +79,11 @@ set noeol
 cnoremap w!! w !sudo tee % >/dev/null
 
 nnoremap <silent> <Leader>f :<C-u>Unite -start-insert -buffer-name=files file_rec/async:!<CR>
-nnoremap <silent> <Leader>w :<C-u>Unite -start-insert -buffer-name=files -input=<C-R>=expand("<cword>")<CR> file_rec/async:!<CR>
+nnoremap <silent> <Leader>wf :<C-u>Unite -start-insert -buffer-name=files -input=<C-R>=expand("<cword>")<CR> file_rec/async:!<CR>
 nnoremap <silent> <Leader>F :<C-u>Unite -start-insert -buffer-name=files file_rec/async:~/Git/<CR>
 nnoremap <silent> <Leader>m :<C-u>Unite -start-insert -buffer-name=mru file_mru<CR>
+nnoremap <silent> <Leader>wg :<C-u>Unite -buffer-name=files grep:.:-iRI:<C-R>=expand("<cword>")<CR> <CR>
+nnoremap <silent> <Leader>wG :<C-u>Unite -buffer-name=files grep:~/Git/:-iRI:<C-R>=expand("<cword>")<CR> <CR>
 nnoremap <silent> ,h :chdir ~/Git/<CR>
 
 set expandtab
