@@ -7,7 +7,9 @@ if [ ! -f $HOME/.screenrc ]; then ln -s $PWD/screenrc $HOME/.screenrc; fi
 if [ ! -d $HOME/.vim ]; then ln -s $PWD/vim $HOME/.vim; fi
 if [ ! -f $HOME/.vimrc ]; then ln -s $PWD/vimrc $HOME/.vimrc; fi
 if [ ! -f $HOME/.tmux.conf ]; then ln -s $PWD/tmux.conf $HOME/.tmux.conf; fi
-if [ ! -f $HOME/.irssi ]; then ln -s $PWD/irssi $HOME/.irssi; fi
+if [ ! -d $HOME/.irssi ]; then ln -s $PWD/irssi $HOME/.irssi; fi
+if [ ! -d $HOME/.ssh ]; then mkdir $HOME/.ssh; fi
+if [ ! -f $HOME/.ssh/config ]; then ln -s $PWD/ssh_config $HOME/.ssh/config; fi
 
 if [ ! -s $HOME/bin ]; then ln -s $PWD/bin $HOME/bin; fi
 
