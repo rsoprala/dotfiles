@@ -24,6 +24,8 @@ NeoBundle 'Shougo/unite-help'
 NeoBundle 'Shougo/unite-session'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'tpope/vim-markdown'
+
 
 set tags=tags;/
 set shiftwidth=4 " tab width
@@ -41,6 +43,7 @@ let mapleader = ","
 let g:mapleader = ","
 
 if &diff
+    set wrap
 else
 "    set autochdir " nice for Ex:
 endif
@@ -64,7 +67,7 @@ noremap Q :qa<CR>
 set laststatus=2
 set hls
 
-set statusline=%{fugitive#statusline()}\ %F[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P 
+set statusline=%{fugitive#statusline()}\ %F[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
 
 au BufNewFile,BufRead *.php set makeprg=php\ -l\ %
 au BufNewFile,BufRead *.php set errorformat=%m\ in\ %f\ on\ line\ %l

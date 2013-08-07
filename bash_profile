@@ -1,9 +1,6 @@
 # .bash_profile
 
 # Get the aliases and functions
-if [ -f ~/.bashrc ]; then
-	. ~/.bashrc
-fi
 
 # User specific environment and startup programs
 
@@ -44,6 +41,7 @@ fi
 PS1="$PS1\[\e[34;1m\]\h\[\e[0m\]"
 PS1="$PS1 \w]"
 PS1="$PS1\\n\\$ "
+export PS1
 
 alias yr="yroot --local-home"
 alias api="yr opsdb_api"
@@ -65,7 +63,7 @@ function vimf {
 
 # Append to ~/.bash_history instead of overwriting it -- this stops terminals
 # from overwriting one another's histories.
-shopt -s histappend
+[ ! -z $BASH_VERSION] && shopt -s histappend
 # Only load the last 1000 lines from your ~/.bash_history -- if you need an
 # older entry, just grep that file.
 HISTSIZE=1000
@@ -86,7 +84,7 @@ function tcpdump_host {
   sudo tcpdump -i eth0 -A host $* and port 80
 }
 
-source ~/dotfiles/git-completion.bash
+[ ! -z $BASH_VERSION] && source ~/dotfiles/git-completion.bash
 export NODE_PATH=/home/mhavener/local/lib/jsctags/:$NODE_PATH
 
 if [ -d $(cat ~/.project) ]; then
