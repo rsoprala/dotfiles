@@ -97,26 +97,34 @@ set expandtab
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 
-
 let g:rbpt_colorpairs = [
-    \ ['brown',       'RoyalBlue3'],
-    \ ['Darkblue',    'SeaGreen3'],
-    \ ['darkgray',    'DarkOrchid3'],
-    \ ['darkgreen',   'firebrick3'],
-    \ ['darkcyan',    'RoyalBlue3'],
-    \ ['darkred',     'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['brown',       'firebrick3'],
-    \ ['gray',        'RoyalBlue3'],
-    \ ['black',       'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['Darkblue',    'firebrick3'],
-    \ ['darkgreen',   'RoyalBlue3'],
-    \ ['darkcyan',    'SeaGreen3'],
-    \ ['darkred',     'DarkOrchid3'],
-    \ ['red',         'firebrick3'],
-    \ ]
-let g:rbpt_max = 16
+            \ ['blue',       '#FF6000'],
+            \ ['cyan', '#00FFFF'],
+            \ ['darkmagenta',    '#CC00FF'],
+            \ ['yellow',   '#FFFF00'],
+            \ ['red',     '#FF0000'],
+            \ ['darkgreen',    '#00FF00'],
+            \ ['White',         '#c0c0c0'],
+            \ ['blue',       '#FF6000'],
+            \ ['cyan', '#00FFFF'],
+            \ ['darkmagenta',    '#CC00FF'],
+            \ ['yellow',   '#FFFF00'],
+            \ ['red',     '#FF0000'],
+            \ ['darkgreen',    '#00FF00'],
+            \ ['White',         '#c0c0c0'],
+            \ ['blue',       '#FF6000'],
+            \ ['cyan', '#00FFFF'],
+            \ ['darkmagenta',    '#CC00FF'],
+            \ ['yellow',   '#FFFF00'],
+            \ ['red',     '#FF0000'],
+            \ ['darkgreen',    '#00FF00'],
+            \ ['White',         '#c0c0c0'],
+            \ ]
+
+" Update this with the amount of supported colors
+"let g:rbpt_max = 21
+let g:rbpt_max = 21
+
 
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
