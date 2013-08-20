@@ -197,11 +197,11 @@ settings = {
   };
 };
 ignores = (
-  { level = "JOINS PARTS QUITS"; channels = ( "#infra" ); },
   { level = "JOINS PARTS QUITS"; channels = ( "#cm3" ); },
   { level = "JOINS PARTS QUITS"; channels = ( "#mysql-geeks" ); },
   {
     level = "JOINS PARTS QUITS NICKS";
     channels = ( "#openstack-dev" );
-  }
+  },
+  { level = "JOINS PARTS QUITS NICKS"; channels = ( "#infra" ); }
 );

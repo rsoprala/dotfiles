@@ -52,7 +52,7 @@ alias fixssh="source $HOME/bin/fixssh"
 alias src="cd $(cat ~/.project)"
 alias grep="grep --color=always"
 alias less="less -r"
-alias mktags='ctags -f ./tags  --langmap="php:+.inc" -h ".php.inc" -R --totals=yes --tag-relative=yes --PHP-kinds=+cf-v .'
+alias mktags='ctags -f ./tags  --langmap="php:+.inc" --langmap="php:+.class" -h ".php.inc" -R --totals=yes --tag-relative=yes --PHP-kinds=+cf-v .'
 
 function vimf {
     vim `find . -iname $1* -type f | tr '\r' ' '`
