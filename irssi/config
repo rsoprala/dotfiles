@@ -203,5 +203,9 @@ ignores = (
     level = "JOINS PARTS QUITS NICKS";
     channels = ( "#openstack-dev" );
   },
-  { level = "JOINS PARTS QUITS NICKS"; channels = ( "#infra" ); }
+  { level = "JOINS PARTS QUITS NICKS"; channels = ( "#infra" ); },
+  {
+    level = "JOINS PARTS QUITS NICKS";
+    channels = ( "#incident54279" );
+  }
 );
