@@ -54,6 +54,7 @@ endif
 set scrolloff=15
 
 syntax enable
+let g:solarized_termtrans = 1
 set background=dark
 colorscheme solarized
 
