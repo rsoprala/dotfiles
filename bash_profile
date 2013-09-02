@@ -21,8 +21,11 @@ fi
 
 function parse_git_branch {
   if [ -e `which git 2> /dev/null` ]; then
-    echo -n $(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)$/\[\1\]/')
-    echo -n " [$(git st | sed -e '1d' | wc -l)] "
+    BRANCH=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)$/\[\1\]/')
+    echo -n $BRANCH
+    if [ "x$BRANCH" != "x" ]; then
+      echo -n " [$(git st | sed -e '1d' | wc -l)] "
+    fi
   else
     echo ""
   fi
