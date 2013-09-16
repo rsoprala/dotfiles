@@ -21,13 +21,15 @@ fi
 
 function parse_git_branch {
   if [ -e `which git 2> /dev/null` ]; then
-    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\[\1\] /'
+    BRANCH=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)$/\[\1\]/')
+    echo -n $BRANCH
+    if [ "x$BRANCH" != "x" ]; then
+      echo -n " [$(git st | sed -e '1d' | wc -l)] "
+    fi
   else
     echo ""
   fi
 }
-
-#export PS1="\$(parse_git_branch) \[\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\]\n\$ "
 
 # http://twiki.corp.yahoo.com/view/Devel/Yroot
 PS1="\e[0;31m\$(parse_git_branch)\e[m["
@@ -52,7 +54,7 @@ alias fixssh="source $HOME/bin/fixssh"
 alias src="cd $(cat ~/.project)"
 alias grep="grep --color=always"
 alias less="less -r"
-alias mktags='ctags -f ./tags  --langmap="php:+.inc" -h ".php.inc" -R --totals=yes --tag-relative=yes --PHP-kinds=+cf-v .'
+alias mktags='ctags -f ./tags  --langmap="php:+.inc" --langmap="php:+.class" -h ".php.inc" -R --totals=yes --tag-relative=yes --PHP-kinds=+cf-v .'
 
 function vimf {
     vim `find . -iname $1* -type f | tr '\r' ' '`

@@ -29,11 +29,13 @@ NeoBundle 'guns/vim-clojure-static'
 NeoBundle 'tpope/vim-classpath'
 NeoBundle 'tpope/vim-fireplace'
 NeoBundle 'kien/rainbow_parentheses.vim'
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'linuxfreakus/DBGp-Remote-Debugger-Interface'
 
 set tags=tags;/
-set shiftwidth=4 " tab width
-set softtabstop=4
-set tabstop=4 " tab wdith expansion
+set shiftwidth=2 " tab width
+set softtabstop=2
+set tabstop=2 " tab wdith expansion
 set cindent
 set nobackup
 set noswapfile
@@ -52,11 +54,13 @@ else
 endif
 set scrolloff=15
 
-colorscheme elflord
+syntax enable
+let g:solarized_termtrans = 1
+set background=dark
+colorscheme solarized
 
 filetype indent on
 filetype plugin on
-syntax on
 
 nmap j gj
 nmap k gk
@@ -76,6 +80,7 @@ au BufNewFile,BufRead *.php set makeprg=php\ -l\ %
 au BufNewFile,BufRead *.php set errorformat=%m\ in\ %f\ on\ line\ %l
 
 au BufNewFile,BufRead *.md set ft=md
+au BufNewFile,BufRead *.class set ft=php
 
 " newlines at end of file getting annoying
 set binary

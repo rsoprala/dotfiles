@@ -1,6 +1,8 @@
 [user]
 	name = Matt Havener
 	email = mhavener@yahoo-inc.com
+[push]
+	default = simple
 [diff]
 	tool = vimdiff
 [difftool]
