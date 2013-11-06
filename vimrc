@@ -31,6 +31,7 @@ NeoBundle 'tpope/vim-fireplace'
 NeoBundle 'kien/rainbow_parentheses.vim'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'linuxfreakus/DBGp-Remote-Debugger-Interface'
+NeoBundle 'tsaleh/vim-matchit'
 
 set tags=tags;/
 set shiftwidth=2 " tab width
