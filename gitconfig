@@ -48,6 +48,7 @@
 
 	# Show files ignored by git:
 	ign = ls-files -o -i --exclude-standard
+  pub = "!f() { git push -u ${1:-origin} `git symbolic-ref HEAD`; }; f"
 
 [branch]
   autosetuprebase = always
