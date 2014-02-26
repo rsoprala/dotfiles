@@ -24,7 +24,7 @@ NeoBundle 'Shougo/unite-outline'
 NeoBundle 'Shougo/unite-help'
 NeoBundle 'Shougo/unite-session'
 NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'airblade/vim-gitgutter'
+" NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'tpope/vim-markdown'
 NeoBundle 'guns/vim-clojure-static'
 " Makes vim slow as hell on java files
@@ -46,6 +46,9 @@ set incsearch
 set ignorecase
 set smartcase
 set expandtab
+set autoindent
+set copyindent
+set shiftround
 
 let mapleader = ","
 let g:mapleader = ","
