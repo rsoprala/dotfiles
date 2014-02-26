@@ -20,15 +20,14 @@ NeoBundle 'Shougo/vimproc', {
       \    },
       \ }
 
+NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/unite-outline'
 NeoBundle 'Shougo/unite-help'
 NeoBundle 'Shougo/unite-session'
 NeoBundle 'tpope/vim-fugitive'
+" NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'tpope/vim-markdown'
-if exists("*gettabvar")
-NeoBundle 'airblade/vim-gitgutter'
-endif
 NeoBundle 'guns/vim-clojure-static'
 " Makes vim slow as hell on java files
 " NeoBundle 'tpope/vim-classpath'
@@ -55,6 +54,9 @@ set incsearch
 set ignorecase
 set smartcase
 set expandtab
+set autoindent
+set copyindent
+set shiftround
 
 let mapleader = ","
 let g:mapleader = ","
@@ -85,6 +87,8 @@ set hls
 
 au BufNewFile,BufRead *.php set makeprg=php\ -l\ %
 au BufNewFile,BufRead *.php set errorformat=%m\ in\ %f\ on\ line\ %l
+
+au BufNewFile,BufRead *.js set sw=4 ts=4 softtabstop=4
 
 au BufNewFile,BufRead *.md set ft=md
 au BufNewFile,BufRead *.class set ft=php
