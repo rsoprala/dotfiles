@@ -1,5 +1,7 @@
 set nocompatible               " Be iMproved
 
+if version > 701
+
 if has('vim_starting')
  set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
@@ -23,8 +25,10 @@ NeoBundle 'Shougo/unite-outline'
 NeoBundle 'Shougo/unite-help'
 NeoBundle 'Shougo/unite-session'
 NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'tpope/vim-markdown'
+if exists("*gettabvar")
+NeoBundle 'airblade/vim-gitgutter'
+endif
 NeoBundle 'guns/vim-clojure-static'
 " Makes vim slow as hell on java files
 " NeoBundle 'tpope/vim-classpath'
@@ -33,6 +37,12 @@ NeoBundle 'kien/rainbow_parentheses.vim'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'linuxfreakus/DBGp-Remote-Debugger-Interface'
 NeoBundle 'tsaleh/vim-matchit'
+
+let g:solarized_termtrans = 1
+set background=dark
+colorscheme solarized
+
+endif " vim >7.1
 
 set tags=tags;/
 set shiftwidth=2 " tab width
@@ -57,9 +67,6 @@ endif
 set scrolloff=15
 
 syntax enable
-let g:solarized_termtrans = 1
-set background=dark
-colorscheme solarized
 
 filetype indent on
 filetype plugin on
@@ -76,8 +83,6 @@ noremap Q :qa<CR>
 set laststatus=2
 set hls
 
-set statusline=%{fugitive#statusline()}\ %F[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
-
 au BufNewFile,BufRead *.php set makeprg=php\ -l\ %
 au BufNewFile,BufRead *.php set errorformat=%m\ in\ %f\ on\ line\ %l
 
@@ -90,6 +95,10 @@ set noeol
 
 " w!!: Writes using sudo
 cnoremap w!! w !sudo tee % >/dev/null
+
+if version > 701
+
+set statusline=%{fugitive#statusline()}\ %F[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
 
 nnoremap <silent> <Leader>f :<C-u>Unite -start-insert -buffer-name=files file_rec/async:!<CR>
 nnoremap <silent> <Leader>wf :<C-u>Unite -start-insert -buffer-name=files -input=<C-R>=expand("<cword>")<CR> file_rec/async:!<CR>
@@ -132,7 +141,6 @@ let g:rbpt_colorpairs = [
 "let g:rbpt_max = 21
 let g:rbpt_max = 21
 
-
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
@@ -152,6 +160,8 @@ if !exists("my_auto_commands_loaded")
   " undolevels=-1 (no undo possible)
   let g:LargeFile = 1024 * 1024 * 10
   augroup LargeFile
-    autocmd BufReadPre * let f=expand("<afile>") | if getfsize(f) > g:LargeFile | set eventignore+=FileType | setlocal noswapfile bufhidden=unload buftype=nowrite undolevels=-1 | else | set eventignore-=FileType | endif
-    augroup END
-  endif
+  autocmd BufReadPre * let f=expand("<afile>") | if getfsize(f) > g:LargeFile | set eventignore+=FileType | setlocal noswapfile bufhidden=unload buftype=nowrite undolevels=-1 | else | set eventignore-=FileType | endif
+  augroup END
+endif
+
+endif " vim >7.1

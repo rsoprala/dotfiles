@@ -11,6 +11,7 @@ if [ ! -f $HOME/.tmux.conf ]; then ln -s $PWD/tmux.conf $HOME/.tmux.conf; fi
 if [ ! -d $HOME/.irssi ]; then ln -s $PWD/irssi $HOME/.irssi; fi
 if [ ! -d $HOME/.ssh ]; then mkdir $HOME/.ssh; fi
 if [ ! -f $HOME/.ssh/config ]; then ln -s $PWD/ssh_config $HOME/.ssh/config; fi
+if [ ! -d $HOME/.subversion ]; then mkdir $HOME/.subversion; fi
 if [ ! -f $HOME/.subversion/config ]; then ln -s $PWD/subversion_config $HOME/.subversion/config; fi
 
 if [ ! -s $HOME/bin ]; then ln -s $PWD/bin $HOME/bin; fi
