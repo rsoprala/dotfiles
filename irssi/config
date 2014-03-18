@@ -212,7 +212,6 @@ hilights = (
 );
 ignores = (
   { level = "JOINS PARTS QUITS"; channels = ( "#cm3" ); },
-  { level = "JOINS PARTS QUITS"; channels = ( "#mysql-geeks" ); },
   {
     level = "JOINS PARTS QUITS NICKS";
     channels = ( "#openstack-dev" );
@@ -240,5 +239,14 @@ ignores = (
     channels = ( "#openstack" );
   },
   { level = "JOINS PARTS QUITS MODES NICKS"; channels = ( "#yis" ); },
-  { level = "JOINS PARTS QUITS MODES NICKS"; channels = ( "#peas" ); }
+  { level = "JOINS PARTS QUITS MODES NICKS"; channels = ( "#peas" ); },
+  { 
+    level = "JOINS PARTS QUITS NICKS";
+    channels = ( "#mysql-geeks" );
+  },
+  {
+    level = "JOINS PARTS QUITS MODES NICKS";
+    channels = ( "#network-sme" );
+  },
+  { level = "JOINS PARTS QUITS MODES NICKS"; channels = ( "#sose" ); }
 );
