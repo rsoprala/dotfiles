@@ -31,6 +31,12 @@ function parse_git_branch {
   fi
 }
 
+function git_cibug {
+  BUG=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' | tr -d '* ' | awk -F_ '{print $2}')
+  MSG="[bug $BUG] $@"
+  eval "git commit -m '$MSG'"
+}
+
 # http://twiki.corp.yahoo.com/view/Devel/Yroot
 PS1="\e[0;31m\$(parse_git_branch)\e[m["
 PS1="$PS1\[\e[36m\]\u\[\e[0m\]"
