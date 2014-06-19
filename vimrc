@@ -36,6 +36,7 @@ NeoBundle 'kien/rainbow_parentheses.vim'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'linuxfreakus/DBGp-Remote-Debugger-Interface'
 NeoBundle 'tsaleh/vim-matchit'
+NeoBundle 'vim-scripts/XDebug-DBGp-client-for-PHP'
 
 let g:solarized_termtrans = 1
 set background=dark

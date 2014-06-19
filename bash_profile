@@ -32,8 +32,9 @@ function parse_git_branch {
 }
 
 function git_cibug {
+  SYS=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' | tr -d '* ' | awk -F_ '{print $1}')
   BUG=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' | tr -d '* ' | awk -F_ '{print $2}')
-  MSG="[bug $BUG] $@"
+  MSG="[$SYS $BUG] $@"
   eval "git commit -m '$MSG'"
 }
 

@@ -7,7 +7,7 @@ Host ss
 Host stg-ia
   Hostname stg-ia-01.infra.corp.bf1.yahoo.com
 Host dev-ia
-  Hostname brushedhushed.corp.gq1.yahoo.com
+  Hostname dev-ia-01.infra.corp.bf1.yahoo.com
 Host int-ia
   Hostname int-ia-01.infra.corp.bf1.yahoo.com
 Host hudson-ia
