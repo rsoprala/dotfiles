@@ -4,6 +4,10 @@ Host dt
 	Hostname depressedtest.corp.gq1.yahoo.com
 Host ss
   Hostname steepsweep.corp.gq1.yahoo.com
+Host hd
+  Hostname highlydryly.corp.ne1.yahoo.com
+Host bs
+  Hostname bettersweater.corp.ne1.yahoo.com
 Host stg-ia
   Hostname stg-ia-01.infra.corp.bf1.yahoo.com
 Host dev-ia

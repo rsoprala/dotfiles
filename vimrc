@@ -91,6 +91,8 @@ au BufNewFile,BufRead *.php set errorformat=%m\ in\ %f\ on\ line\ %l
 
 au BufNewFile,BufRead *.js set sw=4 ts=4 softtabstop=4
 au BufNewFile,BufRead *.pl set sw=4 ts=4 softtabstop=4
+au BufNewFile,BufRead *.erl set sw=4 ts=4 softtabstop=4
+au BufNewFile,BufRead *.app set sw=4 ts=4 softtabstop=4
 
 au BufNewFile,BufRead *.md set ft=md
 au BufNewFile,BufRead *.class set ft=php
