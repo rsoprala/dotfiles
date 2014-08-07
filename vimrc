@@ -35,8 +35,10 @@ NeoBundle 'tpope/vim-fireplace'
 NeoBundle 'kien/rainbow_parentheses.vim'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'linuxfreakus/DBGp-Remote-Debugger-Interface'
-NeoBundle 'tsaleh/vim-matchit'
 NeoBundle 'vim-scripts/XDebug-DBGp-client-for-PHP'
+NeoBundle 'aszlig/vimerl'
+NeoBundle 'vim-scripts/paredit.vim'
+NeoBundle 'fishcakez/vim-rebar'
 
 let g:solarized_termtrans = 1
 set background=dark
@@ -115,6 +117,8 @@ nnoremap <silent> <Leader>m :<C-u>Unite -start-insert -buffer-name=mru file_mru<
 nnoremap <silent> <Leader>wg :<C-u>Unite -buffer-name=files grep:.:-iRI:<C-R>=expand("<cword>")<CR> <CR>
 nnoremap <silent> <Leader>wG :<C-u>Unite -buffer-name=files grep:~/Git/:-iRI:<C-R>=expand("<cword>")<CR> <CR>
 nnoremap <silent> ,h :chdir ~/Git/<CR>
+
+nnoremap <silent> <Leader>C :Rebar compile<CR>
 
 set expandtab
 

@@ -17,6 +17,8 @@ alias egrep='egrep --color=auto'              # show differences in colour
 alias fgrep='fgrep --color=auto'              # show differences in colour
 if [ `uname` != "Darwin" ]; then
     alias ls='ls -hF --color=tty'                 # classify files in colour
+else
+    alias vim="/usr/local/bin/vim"
 fi
 
 function parse_git_branch {
@@ -75,7 +77,7 @@ function vimf {
 [ ! -z $BASH_VERSION ] && shopt -s histappend
 # Only load the last 1000 lines from your ~/.bash_history -- if you need an
 # older entry, just grep that file.
-HISTSIZE=1000
+HISTSIZE=50000
 # Don't truncate ~/.bash_history -- keep all your history, ever.
 unset HISTFILESIZE
 # Add a timestamp to each history entry.

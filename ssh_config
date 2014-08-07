@@ -18,3 +18,5 @@ Host hudson-ia
   Hostname dev-ia-hudson.infra.corp.gq1.yahoo.com
 Host hudson-ia-smoke
   Hostname dev-ia-selenium.infra.corp.gq1.yahoo.com
+Host ci
+  Hostname ci-watchtower-03.infra.corp.bf1.yahoo.com
