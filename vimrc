@@ -39,6 +39,7 @@ NeoBundle 'vim-scripts/XDebug-DBGp-client-for-PHP'
 NeoBundle 'aszlig/vimerl'
 NeoBundle 'vim-scripts/paredit.vim'
 NeoBundle 'fishcakez/vim-rebar'
+NeoBundle 'pangloss/vim-javascript'
 
 let g:solarized_termtrans = 1
 set background=dark
@@ -91,7 +92,7 @@ set hls
 au BufNewFile,BufRead *.php set makeprg=php\ -l\ %
 au BufNewFile,BufRead *.php set errorformat=%m\ in\ %f\ on\ line\ %l
 
-au BufNewFile,BufRead *.js set sw=4 ts=4 softtabstop=4
+"au BufNewFile,BufRead *.js set sw=4 ts=4 softtabstop=4
 au BufNewFile,BufRead *.pl set sw=4 ts=4 softtabstop=4
 au BufNewFile,BufRead *.erl set sw=4 ts=4 softtabstop=4
 au BufNewFile,BufRead *.app set sw=4 ts=4 softtabstop=4

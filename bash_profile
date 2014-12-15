@@ -8,6 +8,7 @@ set -o vi
 export EDITOR=vim
 
 PATH=$PATH:$HOME/bin
+PATH=$PATH:/opt/local/bin
 
 export PATH
 
@@ -39,6 +40,10 @@ function git_cibug {
   MSG="[$SYS $BUG] $@"
   eval "git commit -m '$MSG'"
 }
+
+if [ -d $HOME/adt-bundle-mac-x86_64-20140702/sdk/tools ]; then
+  export PATH=$PATH:$HOME/adt-bundle-mac-x86_64-20140702/sdk/tools
+fi
 
 # http://twiki.corp.yahoo.com/view/Devel/Yroot
 PS1="\e[0;31m\$(parse_git_branch)\e[m["
