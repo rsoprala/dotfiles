@@ -13,6 +13,7 @@ if [ ! -d $HOME/.ssh ]; then mkdir $HOME/.ssh; fi
 if [ ! -f $HOME/.ssh/config ]; then ln -s $PWD/ssh_config $HOME/.ssh/config; fi
 if [ ! -d $HOME/.subversion ]; then mkdir $HOME/.subversion; fi
 if [ ! -f $HOME/.subversion/config ]; then ln -s $PWD/subversion_config $HOME/.subversion/config; fi
+if [ ! -f $HOME/.gdbinit ]; then ln -s $PWD/gdbinit $HOME/.gdbinit; fi
 
 if [ ! -s $HOME/bin ]; then ln -s $PWD/bin $HOME/bin; fi
 

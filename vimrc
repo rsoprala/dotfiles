@@ -40,6 +40,7 @@ NeoBundle 'aszlig/vimerl'
 NeoBundle 'vim-scripts/paredit.vim'
 NeoBundle 'fishcakez/vim-rebar'
 NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'vim-scripts/a.vim'
 
 let g:solarized_termtrans = 1
 set background=dark
