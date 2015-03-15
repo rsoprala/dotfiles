@@ -42,10 +42,6 @@ NeoBundle 'fishcakez/vim-rebar'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'vim-scripts/a.vim'
 
-let g:solarized_termtrans = 1
-set background=dark
-colorscheme solarized
-
 endif " vim >7.1
 
 set tags=tags;/
@@ -175,6 +171,15 @@ if !exists("my_auto_commands_loaded")
   let g:LargeFile = 1024 * 1024 * 10
   augroup LargeFile
   autocmd BufReadPre * let f=expand("<afile>") | if getfsize(f) > g:LargeFile | set eventignore+=FileType | setlocal noswapfile bufhidden=unload buftype=nowrite undolevels=-1 | else | set eventignore-=FileType | endif
+  augroup END
+endif
+
+" Source the vimrc file after saving it. This way, you don't have to reload
+" Vim to see the changes.
+if has("autocmd")
+  augroup myvimrchooks
+  au!
+  autocmd bufwritepost .vimrc source ~/.vimrc
   augroup END
 endif
 
