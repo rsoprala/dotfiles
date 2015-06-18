@@ -117,7 +117,7 @@ nnoremap <silent> <Leader>wG :<C-u>Unite -buffer-name=files grep:~/Git/:-iRI:<C-
 nnoremap <silent> ,h :chdir ~/Git/<CR>
 
 nnoremap <silent> <Leader>C :Rebar compile<CR>
-
+map <C-n> :NERDTreeToggle<CR>
 set expandtab
 
 highlight ExtraWhitespace ctermbg=red guibg=red
