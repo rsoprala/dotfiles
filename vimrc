@@ -62,11 +62,12 @@ set shiftround
 let mapleader = ","
 let g:mapleader = ","
 
-if &diff
-    set wrap
-else
-"    set autochdir " nice for Ex:
-endif
+set nowrap
+"if &diff
+"    set wrap
+"else
+""    set autochdir " nice for Ex:
+"endif
 set scrolloff=15
 
 syntax enable
