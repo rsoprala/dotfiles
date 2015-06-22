@@ -41,6 +41,8 @@ NeoBundle 'vim-scripts/paredit.vim'
 NeoBundle 'fishcakez/vim-rebar'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'vim-scripts/a.vim'
+NeoBundle 'jiangmiao/auto-pairs'
+NeoBundle 'soramugi/auto-ctags.vim'
 
 endif " vim >7.1
 
@@ -58,9 +60,17 @@ set expandtab
 set autoindent
 set copyindent
 set shiftround
+set backspace=2
 
 let mapleader = ","
 let g:mapleader = ","
+
+"for  auto-ctags
+let g:auto_ctags = 1
+let g:auto_ctags_directory_list = ['.git', '.svn']
+let g:auto_ctags_tags_name = 'tags'
+let g:auto_ctags_tags_args = '--tag-relative --recurse --sort=yes'
+let g:auto_ctags_filetype_mode = 1
 
 set nowrap
 "if &diff
@@ -115,10 +125,11 @@ nnoremap <silent> <Leader>F :<C-u>Unite -start-insert -buffer-name=files file_re
 nnoremap <silent> <Leader>m :<C-u>Unite -start-insert -buffer-name=mru file_mru<CR>
 nnoremap <silent> <Leader>wg :<C-u>Unite -buffer-name=files grep:.:-iRI:<C-R>=expand("<cword>")<CR> <CR>
 nnoremap <silent> <Leader>wG :<C-u>Unite -buffer-name=files grep:~/Git/:-iRI:<C-R>=expand("<cword>")<CR> <CR>
-nnoremap <silent> ,h :chdir ~/Git/<CR>
+nnoremap <silent> <Leader>h :chdir ~/Git/<CR>
+nnoremap <silent> <Leader>s :w<CR>
 
 nnoremap <silent> <Leader>C :Rebar compile<CR>
-map <C-n> :NERDTreeToggle<CR>
+nmap <silent> <C-n> :NERDTreeToggle<CR>
 set expandtab
 
 highlight ExtraWhitespace ctermbg=red guibg=red
