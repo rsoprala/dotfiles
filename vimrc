@@ -131,6 +131,7 @@ nnoremap <silent> <Leader>s :w<CR>
 nnoremap <silent> <Leader>C :Rebar compile<CR>
 nmap <silent> <C-n> :NERDTreeToggle<CR>
 set expandtab
+:let g:NERDTreeWinSize=50
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
