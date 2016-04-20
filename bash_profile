@@ -7,9 +7,9 @@
 set -o vi
 export EDITOR=vim
 
-PATH=$PATH:$HOME/bin
+PATH=$PATH:$HOME/bin:/usr/bin
 PATH=$PATH:/opt/local/bin
-
+PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
 export PATH
 
 alias less='less -R'                          # raw control characters
@@ -22,17 +22,6 @@ else
     alias vim="/usr/local/bin/vim"
 fi
 
-function parse_git_branch {
-  if [ -e `which git 2> /dev/null` ]; then
-    BRANCH=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' | tr -d '* ')
-    echo -n "$BRANCH"
-    if [ "x$BRANCH" != "x" ]; then
-      echo -n " [$(git st | sed -e '1d' | wc -l | awk '{print $1}')] "
-    fi
-  else
-    echo ""
-  fi
-}
 
 function git_cibug {
   SYS=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' | tr -d '* ' | awk -F_ '{print $1}')
@@ -41,31 +30,17 @@ function git_cibug {
   eval "git commit -m '$MSG'"
 }
 
-if [ -d $HOME/adt-bundle-mac-x86_64-20140702/sdk/tools ]; then
-  export PATH=$PATH:$HOME/adt-bundle-mac-x86_64-20140702/sdk/tools
-fi
+parse_git_branch() {
+       git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 
-# http://twiki.corp.yahoo.com/view/Devel/Yroot
-PS1="\e[0;31m\$(parse_git_branch)\e[m["
-PS1="$PS1\[\e[36m\]\u\[\e[0m\]"
-PS1="$PS1@"
-if [ "x$YROOT_NAME" != "x" ]; then
-  # Yroot Indicator
-  PS1="$PS1\[\e[32;40m\]$YROOT_NAME\[\e[0m\]"
-  PS1="$PS1@"
-fi
-PS1="$PS1\[\e[34;1m\]\h\[\e[0m\]"
-PS1="$PS1 \w]"
-PS1="$PS1\\n\\$ "
-export PS1
+}
+export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
 
-alias yr="yroot --local-home"
-alias api="yr opsdb_api"
-alias ui="yr opsdb_ui"
+
+
 alias sattach="grabssh; tmux attach-session"
 alias screen="echo u wot"
 alias fixssh="source $HOME/bin/fixssh"
-alias src="cd $(cat ~/.project)"
 alias grep="grep --color=always"
 alias less="less -r"
 alias mktags='ctags -f ./tags  --langmap="php:+.inc" --langmap="php:+.class" -h ".php.inc" -R --totals=yes --tag-relative=yes --PHP-kinds=+cf-v .'
@@ -99,10 +74,3 @@ PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 function tcpdump_host {
   sudo tcpdump -i eth0 -A host $* and port 80
 }
-
-[ ! -z $BASH_VERSION ] && source ~/dotfiles/git-completion.bash
-export NODE_PATH=/home/mhavener/local/lib/jsctags/:$NODE_PATH
-
-if [ -d $(cat ~/.project) ]; then
-    cd $(cat ~/.project)
-fi
