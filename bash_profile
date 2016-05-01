@@ -45,6 +45,9 @@ alias grep="grep --color=always"
 alias less="less -r"
 alias mktags='ctags -f ./tags  --langmap="php:+.inc" --langmap="php:+.class" -h ".php.inc" -R --totals=yes --tag-relative=yes --PHP-kinds=+cf-v .'
 
+#------custom alias --------
+alias cli="ncs_cli -C -u admin"
+#==========================
 function vimf {
     vim `find . -iname $1* -type f | tr '\r' ' '`
 }
@@ -74,3 +77,5 @@ PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 function tcpdump_host {
   sudo tcpdump -i eth0 -A host $* and port 80
 }
+
+source ~/ncs-3.4.5/ncsrc
