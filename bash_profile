@@ -7,8 +7,7 @@
 set -o vi
 export EDITOR=vim
 
-PATH=$PATH:$HOME/bin:/usr/bin
-PATH=$PATH:/opt/local/bin
+PATH=$PATH:$HOME/bin:/usr/bin:/opt/local/bin:/usr/local/bin
 PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
 export PATH
 
@@ -34,9 +33,10 @@ parse_git_branch() {
        git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 
 }
-export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
+export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\](\t) $ "
 
-
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
+alias jvisualvm="$JAVA_HOME/bin/jvisualvm"
 
 alias sattach="grabssh; tmux attach-session"
 alias screen="echo u wot"
@@ -78,4 +78,34 @@ function tcpdump_host {
   sudo tcpdump -i eth0 -A host $* and port 80
 }
 
-source ~/ncs-3.4.5/ncsrc
+#source ~/ncs/current/ncsrc
+alias ssh-168='ssh ncs@10.88.236.168'
+#jenkins 2.7-ncs server connects to qa ASRs on virl
+alias ssh-210='ssh ncs@10.88.236.210'
+#jenkins 2.8-ncs server connects to qa ASRs on virl
+alias ssh-138='ssh ncs@10.88.236.138'
+# dev env
+alias ssh-220='ssh ncs@10.88.236.220'
+# jenkins instance
+alias ssh-205='ssh root@10.88.236.205'
+alias ssh-250='ssh ncs@10.88.236.250'
+# ncs 4.4.1 instance for testing
+alias ssh-211='ssh ncs@10.88.236.211'
+# ncs 4.5 instance for testing
+alias ssh-219='ssh ncs@10.88.236.219'
+# ncs perf instnace to connect to virl ASRs
+alias ssh-173='ssh pronghorn@10.88.236.173'
+
+#alias mt-lab='sshfs cisco@198.18.134.4:ncs-run /Users/nsoprala/nso-guide/nso-advanced/lab'
+
+alias mount-220='sshfs -oauto_cache,volname=lab-220,reconnect,workaround=all ncs@10.88.236.220: /Users/nsoprala/workspace/lab-220'
+alias umount-220='umount -f /Users/nsoprala/workspace/lab-220'
+alias mount-173='sshfs -oauto_cache,volname=lab-173,reconnect,workaround=all pronghorn@10.88.236.173: /Users/nsoprala/workspace/lab-173'
+alias umount-173='umount -f /Users/nsoprala/workspace/lab-173'
+alias mount-219='sshfs -oauto_cache,volname=lab-219,reconnect,workaround=all ncs@10.88.236.219: /Users/nsoprala/workspace/lab-219'
+alias umount-219='umount -f /Users/nsoprala/workspace/lab-219'
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
