@@ -1,6 +1,6 @@
 [user]
         name = Noah Soprala
-        email = rsoprala@yahoo-inc.com
+        email = nsoprala@cisco.com
 [core]
         editor = vim
 [merge]
@@ -11,7 +11,7 @@
         switch = checkout
         logg = log --graph --oneline  --all --decorate
 [push]
-        default = simple
+        default = matching
 [diff]
 	tool = vimdiff
 [difftool]
