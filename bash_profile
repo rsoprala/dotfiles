@@ -8,8 +8,7 @@ set -o vi
 export EDITOR=vim
 
 PATH=$PATH:$HOME/bin:/usr/bin:/opt/local/bin:/usr/local/bin
-PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
-export PATH
+export PATH=/usr/local/share/python:$PATH
 
 alias less='less -R'                          # raw control characters
 alias grep='grep --color'                     # show differences in colour
@@ -35,7 +34,8 @@ parse_git_branch() {
 }
 export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\](\t) $ "
 
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
+#export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 alias jvisualvm="$JAVA_HOME/bin/jvisualvm"
 
 alias sattach="grabssh; tmux attach-session"
@@ -87,7 +87,7 @@ alias ssh-138='ssh ncs@10.88.236.138'
 # dev env
 alias ssh-220='ssh ncs@10.88.236.220'
 # jenkins instance
-alias ssh-205='ssh root@10.88.236.205'
+alias ssh-205='ssh ncs@10.88.236.205'
 alias ssh-250='ssh ncs@10.88.236.250'
 # ncs 4.4.1 instance for testing
 alias ssh-211='ssh ncs@10.88.236.211'
@@ -104,8 +104,13 @@ alias mount-173='sshfs -oauto_cache,volname=lab-173,reconnect,workaround=all pro
 alias umount-173='umount -f /Users/nsoprala/workspace/lab-173'
 alias mount-219='sshfs -oauto_cache,volname=lab-219,reconnect,workaround=all ncs@10.88.236.219: /Users/nsoprala/workspace/lab-219'
 alias umount-219='umount -f /Users/nsoprala/workspace/lab-219'
+alias mount-205='sshfs -oauto_cache,volname=lab-205,reconnect,workaround=all ncs@10.88.236.205: /Users/nsoprala/workspace/lab-205'
+alias umount-205='umount -f /Users/nsoprala/workspace/lab-205'
 
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
