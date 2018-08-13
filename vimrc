@@ -6,7 +6,7 @@ if has('vim_starting')
  set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
@@ -39,6 +39,8 @@ NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'vim-scripts/a.vim'
 NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'soramugi/auto-ctags.vim'
+
+call neobundle#end()
 
 endif " vim >7.1
 
@@ -182,6 +184,9 @@ if !exists("my_auto_commands_loaded")
   autocmd BufReadPre * let f=expand("<afile>") | if getfsize(f) > g:LargeFile | set eventignore+=FileType | setlocal noswapfile bufhidden=unload buftype=nowrite undolevels=-1 | else | set eventignore-=FileType | endif
   augroup END
 endif
+
+" fuzzy finder
+set rtp+=~/.fzf
 
 " Source the vimrc file after saving it. This way, you don't have to reload
 " Vim to see the changes.
