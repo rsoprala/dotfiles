@@ -152,3 +152,6 @@ alias mount-219='sshfs -oauto_cache,volname=lab-219,reconnect,workaround=all ncs
 alias umount-219='umount -f /Users/nsoprala/workspace/lab-219'
 alias mount-205='sshfs -oauto_cache,volname=lab-205,reconnect,workaround=all ncs@10.88.236.205: /Users/nsoprala/workspace/lab-205'
 alias umount-205='umount -f /Users/nsoprala/workspace/lab-205'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+alias f='vim `fzf -i`'
