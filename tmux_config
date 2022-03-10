@@ -99,4 +99,3 @@ setw -g automatic-rename off
 set -g allow-rename off
 
 set -g history-limit 100000
-
